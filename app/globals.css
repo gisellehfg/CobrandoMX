@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 222 18% 7%;
+  --foreground: 210 20% 95%;
+  --card: 222 16% 10%;
+  --card-foreground: 210 20% 95%;
+  --border: 222 14% 16%;
+  --input: 222 14% 16%;
+  --ring: 152 69% 50%;
+  --primary: 152 69% 50%;
+  --primary-foreground: 222 18% 7%;
+  --secondary: 222 14% 16%;
+  --secondary-foreground: 210 20% 75%;
+  --muted: 222 14% 13%;
+  --muted-foreground: 210 14% 50%;
+  --accent: 222 14% 16%;
+  --accent-foreground: 210 20% 95%;
+  --radius: 0.75rem;
+}
+
+* { border-color: hsl(var(--border)); }
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.card-premium {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+
+.stat-card { position: relative; overflow: hidden; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: 1rem; padding: 1.5rem; }
+
+.badge-pendiente { background: rgba(245,158,11,0.15); color: #fbbf24; font-size: 0.75rem; padding: 0.125rem 0.5rem; border-radius: 9999px; font-weight: 500; }
+.badge-en_negociacion { background: rgba(59,130,246,0.15); color: #60a5fa; font-size: 0.75rem; padding: 0.125rem 0.5rem; border-radius: 9999px; font-weight: 500; }
+.badge-promesa_pago { background: rgba(168,85,247,0.15); color: #c084fc; font-size: 0.75rem; padding: 0.125rem 0.5rem; border-radius: 9999px; font-weight: 500; }
+.badge-pagado { background: rgba(16,185,129,0.15); color: #34d399; font-size: 0.75rem; padding: 0.125rem 0.5rem; border-radius: 9999px; font-weight: 500; }
+.badge-no_responde { background: rgba(239,68,68,0.15); color: #f87171; font-size: 0.75rem; padding: 0.125rem 0.5rem; border-radius: 9999px; font-weight: 500; }
+
+.bottom-nav {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
+  background: rgba(10,12,18,0.95);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid hsl(var(--border));
+}
+
+.glow-emerald { box-shadow: 0 0 20px rgba(16,185,129,0.15); }
+
+.input-premium {
+  width: 100%;
+  background: hsl(var(--muted));
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: hsl(var(--foreground));
+  outline: none;
+  transition: all 0.2s;
+}
+.input-premium::placeholder { color: hsl(var(--muted-foreground)); }
+.input-premium:focus { border-color: rgba(16,185,129,0.5); box-shadow: 0 0 0 2px rgba(16,185,129,0.2); }
+
+.bubble-outbound { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); border-radius: 1rem 1rem 0.25rem 1rem; padding: 0.625rem 1rem; max-width: 18rem; font-size: 0.875rem; }
+.bubble-inbound { background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: 1rem 1rem 1rem 0.25rem; padding: 0.625rem 1rem; max-width: 18rem; font-size: 0.875rem; }
+
+.pb-safe { padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
+.pt-safe { padding-top: max(1rem, env(safe-area-inset-top)); }
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in { animation: fade-in 0.3s ease-out; }
