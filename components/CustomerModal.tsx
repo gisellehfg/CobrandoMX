@@ -98,8 +98,7 @@ export default function CustomerModal({ customer, onClose, onSaved }: Props) {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center bg-black/60 backdrop-blur-sm">
-      <div className="w-full max-w-sm bg-card border border-border rounded-t-3xl sm:rounded-2xl p-6 shadow-2xl animate-fade-in">
+<div className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 backdrop-blur-sm overflow-y-auto">      <div className="w-full max-w-sm bg-card border border-border rounded-t-3xl sm:rounded-2xl p-6 shadow-2xl animate-fade-in my-auto">
         <div className="flex items-center justify-between mb-6">
           <h2 className="font-bold text-lg">
             {customer ? 'Editar cliente' : 'Nuevo cliente'}
