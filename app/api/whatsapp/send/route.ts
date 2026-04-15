@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Cliente no encontrado' }, { status: 404 })
     }
 
-    const phone = `whatsapp:+${customer.phone_encrypted}`
+    const phone = `whatsapp:+${customer.phone_encrypted.replace(/\D/g, '')}`
     
     let message = ''
     if (type === 'reminder') {
